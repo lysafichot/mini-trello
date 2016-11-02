@@ -1,0 +1,15 @@
+.register {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  margin: -100px 0 0 -200px;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  background: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px -4px #000000;
+  & .form-group {
+    padding: 40px;
+  }
+}

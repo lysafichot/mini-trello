@@ -1,0 +1,15 @@
+.wrap-projects {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .project-list {
+    height: 500px;
+    overflow: auto;
+    background-color: #E2E4E6;
+    margin: 5px;
+    max-width: 350px;
+    min-width: 250px;
+    border-radius: 5px;
+  }
+}

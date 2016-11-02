@@ -1,0 +1,12 @@
+{% trans_default_domain "header" %}
+
+<header class="board-header">
+    <div class="row">
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <a class="col-sm-3" href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
+        <span class="col-sm-6">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</span>
+        <a class="col-sm-3" href="{{ path('fos_user_profile_show') }}" >{{ 'layout.profile'|trans({}, 'FOSUserBundle') }}</a>
+
+        {% endif %}
+    </div>
+</header>

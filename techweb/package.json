@@ -1,0 +1,28 @@
+{
+  "name": "techweb",
+  "version": "1.0.0",
+  "description": "techweb =======",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.epitech.eu:/fourge_t/PHP_Avance_II_Techweb"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "~2.2.0",
+    "gulp-watch": "^4.3.10"
+  },
+  "directories": {
+    "test": "techweb"
+  },
+  "dependencies": {}
+}

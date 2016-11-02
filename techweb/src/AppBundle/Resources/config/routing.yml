@@ -1,0 +1,7 @@
+project:
+  resource: "@AppBundle/Controller/ProjectController.php"
+  type:   annotation
+
+category:
+  resource: "@AppBundle/Controller/CategoryController.php"
+  type:   annotation

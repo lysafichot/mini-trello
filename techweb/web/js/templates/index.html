@@ -1,0 +1,32 @@
+<div ng-controller="HomeController">
+<div class="add-board">
+    <h4>Ajouter un nouveau projet</h4>
+    <form ng-submit="newProject()" name="myForm" class="my-form form-group" >
+    <input placeholder="Nom du projet" name="input" ng-model="form.name" required>
+    <input class="btn btn-primary" type="submit">
+</form>
+</div>
+<div class="home-controller">
+    <div class="col-sm-2 block-project" ng-click="toggle()"ng-repeat="project in projects" ng-init="outerIndex = $index">
+
+        <div>{{project.id}}</div>
+        <li><a ui-sref="project({ projectId: project.id})">{{project.name}}</a></li>
+
+
+        <button class="btn btn-primary btn-padding" ng-click="toggleFilter(project)">Ajouter</button>
+
+            <form ng-show="project.toggle" ng-submit="addUser(form.username, project.id)" class="my-form" >
+                <input ng-keypress="searchUser(form.username)" name="input" ng-model="form.username" list="autousers" >
+                <input class="btn btn-success btn-padding" type="submit">
+            </form>
+            <div ng-repeat="user in project.groupe[0]">
+
+            <div>{{user.username}}</div>
+        </div>
+
+            <datalist id="autousers">
+                <option data-ng-repeat="item in autousers" value="{{item.username}}" />
+            </datalist>
+    </div>
+</div>
+</div>

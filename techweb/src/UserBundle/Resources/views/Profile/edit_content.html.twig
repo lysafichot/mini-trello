@@ -1,0 +1,9 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<a href="{{ path('homepage') }}" >Accueil</a>
+<a href="{{ path('fos_user_profile_show') }}" >{{ 'layout.profile'|trans({}, 'FOSUserBundle') }}</a>
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}

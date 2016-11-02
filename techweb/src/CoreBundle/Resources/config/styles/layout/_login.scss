@@ -1,0 +1,47 @@
+body {
+  background-color: #e4f0f6;
+}
+.login-header {
+  background-color: #026aa7;
+  height: 45px;
+  width: 100%;
+  position: relative;
+  & span {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+.login {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  margin: -100px 0 0 -200px;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  background: darken(#FFF, 3%);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px -4px #000000;
+  .form-group {
+    padding: 40px;
+    margin-bottom: 0;
+  }
+  input {
+    cursor: pointer;
+      &:focus {
+      cursor: initial;
+    }
+  }
+}
+.footer {
+  position:fixed;
+  margin-left: 0;
+  left:0px;
+  bottom:0px;
+  height:45px;
+  width:100%;
+  background: lighten(#999, 30%);
+  span {
+    padding-top: 10px;
+  }
+}

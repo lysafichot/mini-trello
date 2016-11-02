@@ -1,0 +1,32 @@
+<div ng-controller="ProjectController">
+    <div>Projet</div>
+
+{{project.id}}
+{{project.name}}
+{{project.createdAt.date}}
+    <div>Equipe</div>
+    <div ng-repeat="user in project.groupe[0]">
+        {{user.username}}
+    </div>
+
+    <div>Category</div>
+    <form  ng-submit="addCategory(project.id)" class="my-form" >
+        <input placeholder="Add a category" name="input" ng-model="form.category">
+        <input type="submit">
+    </form>
+<div class="row wrap-projects">
+    <div class="project-list col-sm-3" ng-repeat="(i,category) in project.categories[0] track by $index">
+        <span>{{category.id}}</span>
+        <span>{{category.name}}</span>
+        <div>
+            <form  ng-submit="addTask(form.task[i], category.id)" class="my-form" >
+                <input placeholder="task" name="input" ng-model="form.task[i]">
+                <input type="submit">
+            </form>
+            <div ng-repeat="task in category.tasks[0]">
+                <div style="height: 50px; width: 150px ">{{task.name}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

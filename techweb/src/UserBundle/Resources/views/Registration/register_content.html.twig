@@ -1,0 +1,22 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<header class="login-header">
+    <div class=" text-center">
+        <span>Techweb</span>
+    </div>
+</header>
+<div>
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    {{ form_widget(form) }}
+<div>
+    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+</div>
+{{ form_end(form) }}
+</div>
+<footer class="footer row">
+    <span class="col-sm-4 text-left">Copyright &copy; - Samsung Campus</span>
+    <span class="col-sm-4 text-center">Conditions Générales d'Utilisation</span>
+    <span class="col-sm-4 text-right">Lysa Fichot - Terry Fourgeux</span>
+</footer>
+<div>{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</div>
+
+<a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>

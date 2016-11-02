@@ -1,0 +1,35 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<header class="login-header">
+    <div class=" text-center">
+        <span>Techweb</span>
+    </div>
+</header>
+<div class="login text-center">
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<form class="form-group" action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input class="form-control" type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+
+    <label for="username">{{ 'security.login.username'|trans }}</label>
+    <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+
+    <label for="password">{{ 'security.login.password'|trans }}</label>
+    <input class="form-control" type="password" id="password" name="_password" required="required" />
+
+    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+    <input class="form-control" type="checkbox" id="remember_me" name="_remember_me" value="on" />
+
+    <input class="btn btn-primary mt20" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+</form>
+</div>
+<footer class="footer row">
+    <span class="col-sm-4 text-left">Copyright &copy; - Samsung Campus</span>
+    <span class="col-sm-4 text-center">Conditions Générales d'Utilisation</span>
+    <span class="col-sm-4 text-right">Lysa Fichot - Terry Fourgeux</span>
+</footer>
+<a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
